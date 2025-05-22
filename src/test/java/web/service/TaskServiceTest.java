@@ -21,11 +21,14 @@ public class TaskServiceTest {
         assertEquals(1, tasks.size());
         assertEquals("Task 1", tasks.get(0));
     }
-    
-    @Test
-    public void testDummy() {
-        System.out.println("Running dummy test");
-        assertTrue(true);
-    }
 
+    @Test
+    public void testMultipleTasksForOneStudent() {
+        service.submitTask("student1", "Task 1");
+        service.submitTask("student1", "Task 2");
+        List<String> tasks = service.getTasksForStudent("student1");
+        assertEquals(2, tasks.size());            
+        assertTrue(tasks.contains("Task 1"));
+        assertTrue(tasks.contains("Task 2"));
+    }
 }

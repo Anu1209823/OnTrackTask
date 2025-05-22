@@ -6,9 +6,9 @@ import java.util.List;
 import java.util.Map;
 
 public class TaskService {
-
     private Map<String, List<String>> tasksByStudent = new HashMap<>();
 
+    // Fixed version: accumulates tasks per student
     public void submitTask(String studentId, String task) {
         tasksByStudent.putIfAbsent(studentId, new ArrayList<>());
         tasksByStudent.get(studentId).add(task);

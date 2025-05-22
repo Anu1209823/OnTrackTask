@@ -21,4 +21,11 @@ public class TaskServiceTest {
         assertEquals(1, tasks.size());
         assertEquals("Task 1", tasks.get(0));
     }
+    
+    @Test
+    public void testDummy() {
+        System.out.println("Running dummy test");
+        assertTrue(true);
+    }
+
 }
